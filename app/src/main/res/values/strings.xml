@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ITVL</string>
+    <string name="inicio_de_sesi_n">Inicio de Sesión</string>
+    <string name="correo_electr_nico">Correo electrónico</string>
+    <string name="clave_de_acceso">Clave de acceso</string>
+    <string name="acceder">Acceder</string>
+    <string name="registrase">Registrase</string>
+</resources>
