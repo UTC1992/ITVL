@@ -12,6 +12,9 @@ interface ApiService {
         @Query("cedula") dni: String,
         @Query("nombres") name: String,
         @Query("correo") email: String,
-        @Query("cod_asig") code: String,
+        @Query("cod_asig") code: Int,
         ): Any
+
+    @GET("lab_asignatura.php")
+    suspend fun onGetSubjects(): ResponseSubject
 }

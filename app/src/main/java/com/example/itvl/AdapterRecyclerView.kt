@@ -7,7 +7,7 @@ import android.widget.AdapterView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class AdapterRecyclerView(private val dataList: List<ItemList>) : RecyclerView.Adapter<AdapterRecyclerView.ViewHolder>() {
+class AdapterRecyclerView(private val dataList: List<Subject>) : RecyclerView.Adapter<AdapterRecyclerView.ViewHolder>() {
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
@@ -38,7 +38,7 @@ class AdapterRecyclerView(private val dataList: List<ItemList>) : RecyclerView.A
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = dataList[position]
-        holder.textViewTitle.text = data.title
+        holder.textViewTitle.text = data.denominacion
     }
 
     override fun getItemCount(): Int {
