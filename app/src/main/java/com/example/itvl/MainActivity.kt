@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import android.util.Log
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +42,18 @@ class MainActivity : AppCompatActivity() {
 
                 val response = ApiClient.apiService.onLogin(email, password)
                 Toast.makeText(applicationContext, response.toString(), Toast.LENGTH_SHORT).show()
+
+                withContext(Dispatchers.Main) {
+                    val option = 1 // debes asignar el tipo
+
+                    when(option) {
+                        1 -> {
+                            //aquí va el codigo para navegar a otra activity
+                            val registrar = Intent(applicationContext, Registrar_activity::class.java)
+                            startActivity(registrar)
+                        }
+                    }
+                }
 
                 Log.d("Log, ", response.toString())
             } catch (e: Exception) {
